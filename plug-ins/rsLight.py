@@ -1,9 +1,9 @@
 # -*- coding=UTF-8 -*-
 from __future__ import absolute_import
 
-from pymel.all import setParent, shelfLayout, shelfButton, deleteUI
+from maya.cmds import setParent, shelfLayout, shelfButton, deleteUI
 
-from Lib.light import rsPhysicalLight, breakAllLightLink
+from _rsLight import rsPhysicalLight, breakAllLightLink
 
 
 def initializePlugin(mobject):
@@ -25,6 +25,7 @@ def addShelf():
                 command=rsPhysicalLight,
                 imageOverlayLabel=u"物理光",
                 )
+
     shelfButton(annotation=u'断开所选灯光所有链接',
                 image1='lightBulb.png',
                 command=breakAllLightLink,
